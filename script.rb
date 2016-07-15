@@ -7,3 +7,12 @@ File.open("log.txt") do |log_file|
     end
   end
 end
+
+#Opening line by line
+File.open("log.txt") do |log_file|
+  log_file.each_line do |request|
+    if request.start_with?("127.0.0.1 ")
+      puts request
+    end
+  end
+end
